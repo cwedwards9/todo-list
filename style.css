@@ -2,6 +2,7 @@ main.container {
     border: 1px solid black;
     width: 400px;
     margin: 100px auto;
+    font-family: 'Raleway', sans-serif;
 }
 
 #title {
@@ -35,9 +36,30 @@ ul {
     padding: 0px;
 }
 
+span {
+    margin-right: 10px;
+    background-color: red;
+    text-align: center;
+    opacity: 0;
+    width: 0;
+    transition: 0.2s linear;
+    display: inline-block;
+}
+
+i {
+    color: white;
+    font-size: 15px;
+    margin: 15px;
+}
+
 li {
     list-style: none;
-    padding: 15px 10px;
+    font-size: 15px;
+}
+
+li:hover span {
+    opacity: 1;
+    width: 40px;
 }
 
 li:nth-child(even) {
