@@ -1,0 +1,45 @@
+main.container {
+    border: 1px solid black;
+    width: 400px;
+    margin: 100px auto;
+}
+
+#title {
+    text-align: center;
+    margin: 0px;
+    padding: 5px 0px;
+    background-color: blue;
+    color: white;
+}
+
+#todoInput {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    background-color: floralwhite;
+    padding: 15px 10px;
+    font-size: 20px;
+}
+
+#todoInput::placeholder {
+    color: lightblue;
+}
+
+#todoInput:focus {
+    outline: none;
+    border: 1px solid lightblue;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+    padding: 15px 10px;
+}
+
+li:nth-child(even) {
+    background-color: floralwhite;
+}
