@@ -1,23 +1,30 @@
+body {
+    background: #f46b45;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 main.container {
-    border: 1px solid black;
+    border-radius: 10px;
     width: 400px;
     margin: 100px auto;
-    font-family: 'Raleway', sans-serif;
 }
 
 #title {
     text-align: center;
     margin: 0px;
+    height: 40px;
     padding: 5px 0px;
-    background-color: blue;
+    background-color:#3385ff;
     color: white;
+    font-family: 'Cabin Sketch', cursive;
 }
 
 #todoInput {
     width: 100%;
     box-sizing: border-box;
     border: none;
-    background-color: floralwhite;
+    background-color:#f2f2f2;
     padding: 15px 10px;
     font-size: 20px;
 }
@@ -32,36 +39,44 @@ main.container {
 }
 
 ul {
+    list-style: none;
     margin: 0px;
     padding: 0px;
+    font-family: 'Sue Ellen Francisco', cursive;
 }
 
 span {
+    height: 50px;
+    width: 0px;
+    display: inline-block;
     margin-right: 10px;
     background-color: red;
+    color: white;
     text-align: center;
     opacity: 0;
-    width: 0;
     transition: 0.2s linear;
-    display: inline-block;
-}
-
-i {
-    color: white;
-    font-size: 15px;
-    margin: 15px;
 }
 
 li {
-    list-style: none;
-    font-size: 15px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    background-color: white;
 }
 
 li:hover span {
     opacity: 1;
-    width: 40px;
+    width: 50px;
 }
 
 li:nth-child(even) {
-    background-color: floralwhite;
+    background-color:#f2f2f2;
+}
+
+i {
+    font-size: 20px;
+}
+
+.complete {
+    text-decoration: line-through;
 }
