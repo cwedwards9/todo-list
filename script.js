@@ -11,3 +11,8 @@ $("#todoInput").on("keypress", function(e){
 $("ul").on("click", "span", function(){
     $(this).parent().remove();
 });
+
+// When a user clicks on the list item itself, the item is crossed off, but stays on the list
+$("ul").on("click", "li", function(){
+    $(this).toggleClass("complete");
+})
