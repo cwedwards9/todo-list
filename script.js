@@ -1,5 +1,7 @@
 // start off with an empty array (for now, add local storage later)
-var items = [];
+var items = JSON.parse(localStorage.getItem("items")) || [];
+
+updateListDisplay(items);
 
 
 // When a user presses enter, the text in the input is added to the array and to the list
@@ -49,4 +51,7 @@ function updateListDisplay(arr){
     for(var i = 0; i < arr.length; i++){
         $("ul").append("<li data=" + i + "><span><i class='fa fa-trash'></i></span>" + arr[i] + "</li>");
     }
+
+    // Save item to array in local storage
+    localStorage.setItem("items", JSON.stringify(items));
 }
