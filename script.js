@@ -1,16 +1,42 @@
+// start off with an empty array (for now, add local storage later)
+var items = [];
+
 // When a user presses enter, the text in the input is added to the list
 $("#todoInput").on("keypress", function(e){
     if(e.which === 13){
-        var listItem = $(this).val();
-        $("ul").append("<li><span><i class='fa fa-trash'></i></span>" + listItem + "</li>");
+        // get value and push to array
+        var item = $(this).val();
+        if(item === ""){
+            return;
+        } else {
+            items.push(item);
+        }
+        
+        // Empty list before we loop through the array and add its items to the list
+        $("ul").empty();
+        for(var i = 0; i < items.length; i++){
+            $("ul").append("<li data=" + i + "><span><i class='fa fa-trash'></i></span>" + items[i] + "</li>");
+        }
+        // Clear the input 
         $(this).val("");
     }
 });
 
-// When a user clicks on the trash can icon (inside span), that whole li it is nested in is deleted
+
+// When a user clicks on the trash can icon (inside span), delete the entire parent li
 $("ul").on("click", "span", function(){
     $(this).parent().remove();
+    var index = $(this).parent().attr("data");
+    // Delete the corresponding element in the array
+    items.splice(index, 1);
+
+    // Refresh the list to reflect changes
+    $("ul").empty();
+    for(var i = 0; i < items.length; i++){
+        $("ul").append("<li data=" + i + "><span><i class='fa fa-trash'></i></span>" + items[i] + "</li>");
+    }
 });
+
 
 // When a user clicks on the list item itself, the item is crossed off, but stays on the list
 $("ul").on("click", "li", function(){
