@@ -1,4 +1,4 @@
-// start off with an empty array (for now, add local storage later)
+// Set items array equal to an empty array or equal to the local storage 'items' if it exists
 var items = JSON.parse(localStorage.getItem("items")) || [];
 
 updateListDisplay(items);
