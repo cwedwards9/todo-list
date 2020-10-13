@@ -1,5 +1,5 @@
 // Set items array equal to an empty array or equal to the local storage 'items' if it exists
-var items = JSON.parse(localStorage.getItem("items")) || [];
+const items = JSON.parse(localStorage.getItem("items")) || [];
 
 updateListDisplay(items);
 
@@ -8,7 +8,7 @@ updateListDisplay(items);
 $("#todoInput").on("keypress", function(e){
     if(e.which === 13){
         // get value and push to array
-        var item = $(this).val();
+        let item = $(this).val();
         if(item === ""){
             return;
         } else {
@@ -25,10 +25,10 @@ $("#todoInput").on("keypress", function(e){
 
 // When a user clicks on the trash can icon (inside span), delete the entire parent li
 $("ul").on("click", "span", function(){
-    var deleteItem = $(this).parent();
+    let deleteItem = $(this).parent();
     
     // Delete the corresponding element in the array
-    var index = deleteItem.attr("data");
+    let index = deleteItem.attr("data");
     items.splice(index, 1);
 
     // Delete the li from the html
@@ -48,7 +48,7 @@ $("ul").on("click", "li", function(){
 function updateListDisplay(arr){
     // Empty list before we loop through the array and add its updated items to the list
     $("ul").empty();
-    for(var i = 0; i < arr.length; i++){
+    for(let i = 0; i < arr.length; i++){
         $("ul").append("<li data=" + i + "><span><i class='fa fa-trash'></i></span>" + arr[i] + "</li>");
     }
 
