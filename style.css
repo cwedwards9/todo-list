@@ -91,3 +91,7 @@ i {
 .complete {
     text-decoration: line-through;
 }
+
+.in-progress {
+    text-decoration: none;
+}
